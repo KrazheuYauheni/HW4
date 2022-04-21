@@ -56,7 +56,15 @@ namespace HW4
 			while (true)
 			{
 				Console.WriteLine("Введите загаданное число: ");
-				int user_number = Convert.ToInt32(Console.ReadLine());
+				var empty = Console.ReadLine();
+				if (empty=="")
+				{
+					Console.WriteLine("Загаданное число = "+r_number);
+					break;
+				}
+				else
+				{
+				int user_number = Convert.ToInt32(empty);
 				if (user_number > r_number)
 				{
 					Console.WriteLine("Введённое число больше загаданного.");
@@ -70,6 +78,8 @@ namespace HW4
 					Console.WriteLine("Вы угадали!");
 					break;
 				}
+				}
+			}
 			}
 		}
 	}
