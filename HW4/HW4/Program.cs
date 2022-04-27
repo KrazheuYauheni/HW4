@@ -9,16 +9,21 @@ namespace HW4
 			//Задание 4.1
 			Console.WriteLine("Введите кол-во строк: ");
 			int lines = Convert.ToInt32(Console.ReadLine());
+
 			Console.WriteLine("Введите кол-во столбцов: ");
 			int columns = Convert.ToInt32(Console.ReadLine());
+
 			int sum_of_elements = 0;
+
 			Random r_elements = new Random();
+
 			int[,] matrix = new int[lines, columns];
+
 			for (int lines_index = 0; lines_index < lines; lines_index++)
 			{
 				for (int columns_index = 0; columns_index < columns; columns_index++)
 				{
-					matrix[lines_index, columns_index] = r_elements.Next(100);
+					matrix[lines_index, columns_index] = r_elements.Next(10);
 					sum_of_elements += matrix[lines_index, columns_index];
 					Console.Write(matrix[lines_index, columns_index]);
 				}
@@ -65,12 +70,18 @@ namespace HW4
 				{
 					Console.WriteLine("Введённое число меньше загаданного.");
 				}
-				else
+				else if (user_number == r_number)
 				{
 					Console.WriteLine("Вы угадали!");
 					break;
 				}
+                else
+                {
+					Console.ReadKey();
+					Console.WriteLine($"Загаданное число = {r_number}");
+				}
 			}
+			
 		}
 	}
 }
