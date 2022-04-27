@@ -61,27 +61,35 @@ namespace HW4
 			while (true)
 			{
 				Console.WriteLine("Введите загаданное число: ");
-				int user_number = Convert.ToInt32(Console.ReadLine());
-				if (user_number > r_number)
+				var empty = Console.ReadLine();
+				if (empty=="")
 				{
-					Console.WriteLine("Введённое число больше загаданного.");
-				}
-				else if (user_number < r_number)
-				{
-					Console.WriteLine("Введённое число меньше загаданного.");
-				}
-				else if (user_number == r_number)
-				{
-					Console.WriteLine("Вы угадали!");
+					Console.WriteLine("Загаданное число = "+r_number);
 					break;
 				}
-                else
-                {
-					Console.ReadKey();
-					Console.WriteLine($"Загаданное число = {r_number}");
+				else
+				{
+				  int user_number = Convert.ToInt32(empty);
+				  if (user_number > r_number)
+				  {
+				    Console.WriteLine("Введённое число больше загаданного.");
+				  }
+				  else if (user_number < r_number)
+				  {
+					  Console.WriteLine("Введённое число меньше загаданного.");
+				  }
+				  else if (user_number == r_number)
+				  {
+					  Console.WriteLine("Вы угадали!");
+					  break;
+				  }
+          else
+          {
+					  Console.ReadKey();
+            Console.WriteLine($"Загаданное число = {r_number}");
+          }
 				}
-			}
-			
+      }
 		}
 	}
 }
